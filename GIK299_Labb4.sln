@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIK299_Labb4", "GIK299_Labb4\GIK299_Labb4.csproj", "{D8786D75-0ACE-4082-8EA0-AB7D861A01EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8786D75-0ACE-4082-8EA0-AB7D861A01EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8786D75-0ACE-4082-8EA0-AB7D861A01EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8786D75-0ACE-4082-8EA0-AB7D861A01EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8786D75-0ACE-4082-8EA0-AB7D861A01EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
