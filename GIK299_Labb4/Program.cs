@@ -7,30 +7,23 @@ using GIK299_Labb4;
 
     internal class Program
     {
-
-        static string hairColor = "";
-        static string hairType = "";
-
-        static string hairLength = "";
-
-        //static Hair hair;
-        static Gender gender;
+        //Lista för tillaga personer
         static List<Person> addedPersons = new List<Person>();
 
         public static void Main(string[] args)
         {
-
+            //bool-variabel för att kunna lämna meny
             bool exitOption = true;
             Thinker thinker = new Thinker();
 
-
+            //Meny för att lägga till/visa personer som är tillaggda samt avsluta programmet
             while (exitOption)
             {
                 Console.WriteLine(
                     "----------------------------------" +
                     "\n Choose an option from list below" +
                     "\n (1) Add person" +
-                    "\n (2) Display added persons" +
+                    "\n (2) Print stored person(s)" +
                     "\n (3) Exit" +
                     "\n----------------------------------"
 
@@ -39,7 +32,8 @@ using GIK299_Labb4;
 
                 string mainMenu = Console.ReadLine();
 
-
+                //input valideras genom att switch bygger på en string som måste stämma överens med case,
+                //annars hamnar man i default som ber en välja nummer
                 switch (mainMenu)
                 {
 
@@ -77,10 +71,14 @@ using GIK299_Labb4;
             }
         }
 
-
+        //Metod för att skapa och läggaa till personer
         static void AddPerson()
         {
-            //saker jag behöver nå senare
+            //variabler jag behöver nå senare
+            string hairColor = "";
+            string hairType = "";
+            string hairLength = "";
+            Gender gender = Gender.NotAvailible;
             int genderChoice = 4;
             int intHairLength = 4;
             int intHairColor = 4;
@@ -96,7 +94,7 @@ using GIK299_Labb4;
             DateTime birthday = DateTime.Now;
             DateTime maxAge = new DateTime(1900, 01, 01);
             Thinker thinker = new Thinker();
-
+            ////do-while loop och try-catch för att ta emot och vailidera indata för födelsedatum
             do
             {
                 try
@@ -126,7 +124,7 @@ using GIK299_Labb4;
             } while (doBirthday);
 
             thinker.Think(1, 300);
-
+            //do-while loop och try-catch för att ta emot och vailidera indata för kön
             do
             {
                 try
@@ -164,6 +162,7 @@ using GIK299_Labb4;
 
 
             } while (doGender);
+            //Switch för att tilldela enum till gender
 
             switch (genderChoice)
             {
@@ -185,7 +184,8 @@ using GIK299_Labb4;
             Console.Clear();
             thinker.Think(1, 300);
             Console.WriteLine("Next we need information about your hair.");
-
+            
+            //do-while loop och try-catch för att ta emot och vailidera indata för hårlängd
             do
             {
                 try
@@ -226,6 +226,7 @@ using GIK299_Labb4;
                 }
 
             } while (doHairLength);
+            //Switch för tilldela string till hårlängd
 
             switch (intHairLength)
             {
@@ -245,7 +246,7 @@ using GIK299_Labb4;
 
             Console.Clear();
             thinker.Think(1, 300);
-
+            //do-while loop och try-catch för att ta emot och vailidera indata för hårfärg
             do
             {
                 try
@@ -285,6 +286,8 @@ using GIK299_Labb4;
 
 
             } while (doHairColor);
+            
+            //Switch för tilldela string till hårfärg
 
             switch (intHairColor)
             {
@@ -305,6 +308,7 @@ using GIK299_Labb4;
 
             Console.Clear();
             thinker.Think(1, 300);
+            //do-while loop och try-catch för att ta emot och vailidera indata för hårtyp
             do
             {
                 try
@@ -342,7 +346,8 @@ using GIK299_Labb4;
                 }
 
             } while (doHairType);
-
+            
+            //Switch för tilldela string till hårtyp
             switch (intHairType)
             {
                 case 1:
@@ -361,6 +366,7 @@ using GIK299_Labb4;
             thinker.Think(1, 300);
             Console.WriteLine("Lastly we need your eyecolor." +
                               "\nWrite below:");
+            //loop och validering av indata för ögonfärg
             do
             {
                 try
@@ -403,6 +409,8 @@ using GIK299_Labb4;
                 }
 
             } while (doEyeColor);
+            //Switch för att skriva ut ögonfärgen med stor första bokstav eftersom jag i tidigare steg
+            //gör texten till små bokstäver för att kunna använda mina villkor i if-sats
 
             switch (strEyeColor)
             {
@@ -422,15 +430,18 @@ using GIK299_Labb4;
                     eyeColor = "Mix";
                     break;
             }
-
+            //Skapar "hair"
             Hair hair = new Hair { HairColor = hairColor, HairType = hairType, HairLength = hairLength };
+            //skapar "person"
             Person person = new Person(birthday, eyeColor, gender, hair);
+            //lägger till person
             addedPersons.Add(person);
             thinker.Think(1, 300);
             Console.WriteLine("Person successfully added!");
             Thread.Sleep(1500);
         }
 
+        //Metod för att skriva ut alla personer i listan.
         static void ListPersons()
         {
             foreach (var person in addedPersons)
