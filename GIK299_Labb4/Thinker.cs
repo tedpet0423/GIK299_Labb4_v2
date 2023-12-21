@@ -18,6 +18,12 @@ public class Thinker
             Console.WriteLine("...");
             Thread.Sleep(timeMs);
             Console.Clear();
+            Console.WriteLine("....");
+            Thread.Sleep(timeMs);
+            Console.Clear();
+            Console.WriteLine(".....");
+            Thread.Sleep(timeMs);
+            Console.Clear();
         }
     }
 }
