@@ -9,13 +9,19 @@ public class Thinker
             Console.Clear();
             Thread.Sleep(timeMs);
             Console.Clear();
-            Console.WriteLine("Thinking.");
+            Console.WriteLine(".");
             Thread.Sleep(timeMs);
             Console.Clear();
-            Console.WriteLine("Thinking..");
+            Console.WriteLine("..");
             Thread.Sleep(timeMs);
             Console.Clear();
-            Console.WriteLine("Thinking...");
+            Console.WriteLine("...");
+            Thread.Sleep(timeMs);
+            Console.Clear();
+            Console.WriteLine("....");
+            Thread.Sleep(timeMs);
+            Console.Clear();
+            Console.WriteLine(".....");
             Thread.Sleep(timeMs);
             Console.Clear();
         }
