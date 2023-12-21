@@ -319,8 +319,7 @@ using GIK299_Labb4;
                                       "\n(3) Other");
                     string strHairType = Console.ReadLine();
 
-                    if (strHairType == "1" || strHairType == "2" || strHairType == "3" ||
-                        strHairType == "4")
+                    if (strHairType == "1" || strHairType == "2" || strHairType == "3")
                     {
                         Console.Clear();
                         intHairType = int.Parse(strHairType);
